@@ -2,6 +2,9 @@ from mpl_toolkits.mplot3d.axes3d import Axes3D
 import matplotlib.pyplot as plt
 fig, ax = plt.subplots(subplot_kw={'projection': '3d'})
 
+#Font
+##plt.rcParams["font.family"] = "serif"
+
 
 #change / add / modify the color here:
 #colors refer:  https://matplotlib.org/stable/_images/sphx_glr_named_colors_003.png
@@ -27,7 +30,8 @@ dataMax = input("Number of graphs: ")
 axis_X_text = input("X-axis Label: ")
 axis_Y_text = input("Y-axis Label: ")
 axis_Z_text = input("Z-axis Label: ")
-
+font_size = int(input("Font Size: "))
+font_name = "Times New Roman"
 N = int(dataMax)
 i = 1
 while(i <= N):
@@ -76,9 +80,12 @@ while(i <= N):
     for dataset in datasets:
         ax.plot(dataset["x"], dataset["y"], dataset["z"], color=dataset["colour"])
     i = i + 1
+ax.xaxis.set_tick_params(labelsize=int(font_size*0.8))
+ax.yaxis.set_tick_params(labelsize=int(font_size*0.8))
+ax.zaxis.set_tick_params(labelsize=int(font_size*0.8))
 
-ax.set_xlabel(axis_X_text)
-ax.set_ylabel(axis_Y_text)
-ax.set_zlabel(axis_Z_text)
+ax.set_xlabel(axis_X_text, fontname=font_name, fontsize=font_size)
+ax.set_ylabel(axis_Y_text, fontname=font_name, fontsize=font_size)
+ax.set_zlabel(axis_Z_text, fontname=font_name, fontsize=font_size)
 
 plt.show()
