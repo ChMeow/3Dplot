@@ -24,6 +24,10 @@ axis_Z_text = "Z-label here"
 constantX = True
 
 dataMax = input("Number of graphs: ")
+axis_X_text = input("X-axis Label: ")
+axis_Y_text = input("Y-axis Label: ")
+axis_Z_text = input("Z-axis Label: ")
+
 N = int(dataMax)
 i = 1
 while(i <= N):
